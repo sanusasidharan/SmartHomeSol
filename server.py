@@ -3,8 +3,6 @@ import os
 import socket
 import cv2
 import base64
-import PIL.Image
-from io import BytesIO
 from google.cloud import aiplatform
 
 app = flask.Flask(__name__)
