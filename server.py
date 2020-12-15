@@ -15,6 +15,7 @@ def hello():
 def faceDetection():
     try:
         imageDetection()
+        return "face detection completed"
     except:
         print("error")
         return "face detection completed"
@@ -58,6 +59,6 @@ PORT = int(os.getenv('PORT', 8000))
 host_name = socket.gethostname()
 host_ip = socket.gethostbyname(host_name)
 
-# driver function 
+# driver function
 if __name__ == '__main__':
     app.run(debug=True, host=host_ip, port=PORT)
