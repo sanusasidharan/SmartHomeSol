@@ -1,10 +1,11 @@
-FROM python:3.6
+FROM python:3.7
 
 USER root
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install ffmpeg libsm6 libxext6 -y --no-install-recommends \
     -y libxrender-dev \
+    -y mesa-common-dev libglu1-mesa-dev \
     && rm -rf /var/lib/apt/lists/*
 
 #WORKDIR /usr/src/app
