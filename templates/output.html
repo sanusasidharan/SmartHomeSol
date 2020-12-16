@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script>
+        const  randomImage = () =>{
+            let rand = Math.ceil(Math.random() *10);
+            console.log("random num",rand);
+            let selector = document.createElement('img');
+            if(rand>=0 && rand<=2){
+                selector.src="{{url_for('static', filename='facedetected.jpg')}}"
+            }
+            else if(rand>2 && rand<=4){
+            selector.src="{{url_for('static', filename='face1.jpg')}}"
+            }
+            else if(rand>4 && rand<=6){
+            selector.src="{{url_for('static', filename='face2.jpg')}}"
+            }
+            else if(rand>6 && rand<=7){
+            selector.src="{{url_for('static', filename='face3.jpg')}}"
+            }
+            else if(rand>7 && rand<=8){
+            selector.src="{{url_for('static', filename='face4.jpg')}}"
+            }
+            else if(rand>8 && rand<=9){
+            selector.src="{{url_for('static', filename='face5.jpg')}}"
+            }
+            else if(rand>9 && rand<=10){
+            selector.src="{{url_for('static', filename='face6.jpg')}}"
+            }
+            else{
+            selector.src="{{url_for('static', filename='face7.jpg')}}"
+            }
+            document.getElementById('body').appendChild(selector);
+        }
+</script>
 </head>
-<body>
-   <img src="{{url_for('static', filename='facedetected.jpg')}}" />
+<body id="body" onload="randomImage()">
+
+<!--   <img src="{{url_for('static', filename='facedetected.jpg')}}" />-->
 </body>
 </html>
