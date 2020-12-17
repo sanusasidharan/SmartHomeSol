@@ -8,8 +8,7 @@ import sys
 from PIL import Image
 from flask import render_template
 from google.cloud import aiplatform
-from google.cloud import automl_v1beta1
-
+from google.cloud import automl
 
 
 app = flask.Flask(__name__)
@@ -73,7 +72,7 @@ def faceprediction():
 
 
 def get_prediction(content, project_id, model_id):
-  prediction_client = automl_v1beta1.PredictionServiceClient()
+  prediction_client = automl.PredictionServiceClient()
 
   name = 'projects/{}/locations/us-central1/models/{}'.format(project_id, model_id)
   payload = {'image': {'image_bytes': content }}
