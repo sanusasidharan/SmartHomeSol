@@ -6,7 +6,6 @@
     <script>
         const  randomImage = () =>{
             let rand = Math.ceil(Math.random() *10);
-            console.log("random num",rand);
             let selector = document.createElement('img');
             if(rand>=0 && rand<=2){
                 selector.src="{{url_for('static', filename='facedetected.jpg')}}"
@@ -32,12 +31,22 @@
             else{
             selector.src="{{url_for('static', filename='face7.jpg')}}"
             }
-            document.getElementById('body').appendChild(selector);
+            document.getElementById('img').appendChild(selector);
         }
 </script>
 </head>
-<body id="body" onload="randomImage()">
-
-<!--   <img src="{{url_for('static', filename='facedetected.jpg')}}" />-->
+<body bgcolor="#4d4d4d" id="body" onload="randomImage()">
+<div color="red" style="width:100%;height:40%;color:red;background-color:#32a885"><center><h1>SMART HOME</h1></center>
+</div>
+<br>
+<center><div>See the detected face</div></center><br>
+<center><div id="img"></div></center>
+<br><br>
+<center><a href="/face-predict">Click here to Predict face</a></center>
 </body>
+<style>
+    a{
+    color:#3283a8;
+    }
+</style>
 </html>
