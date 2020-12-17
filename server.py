@@ -81,17 +81,13 @@ def get_prediction(content, project_id, model_id):
   request = prediction_client.predict(name, payload, params)
   return request  # waits till request is returned
 
-if __name__ == '__main__':
-  file_path = sys.argv[1]
-  project_id = sys.argv[2]
-  model_id = sys.argv[3]
+  if __name__ == '__main__':
+      file_path = sys.argv[1]
+      project_id = sys.argv[2]
+      model_id = sys.argv[3]
 
-  with open(file_path, 'rb') as ff:
-    content = ff.read()
-
-
-
-
+      with open(file_path, 'rb') as ff:
+          content = ff.read()
 
 
 def predict_image_classification_sample(
