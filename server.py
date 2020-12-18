@@ -55,10 +55,9 @@ def faceautopredict():
 def faceprediction():
     try:
 
-        encoded = base64.b64encode(open("facedetected.jpg", "rb").read())
-        predictions = predict_image_classification_sample(
+          predictions = predict_image_classification_sample(
              "projects/44045539977/locations/us-central1/endpoints/625613320111521792",
-             {"content": encoded, "mimeType": "image/jpeg"},
+             {"content": "facedetected.jpg", "mimeType": "image/jpeg"},
              {"maxPredictions": 5, "confidenceThreshold": 0.5}
          )
         print(predictions)
