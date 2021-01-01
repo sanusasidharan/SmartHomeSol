@@ -11,7 +11,6 @@ def predict_image_classification_sample(
     # See gs://google-cloud-aiplatform/schema/predict/params/image_classification_1.0.0.yaml for the format of the parameters.
     parameters = json_format.ParseDict(parameters_dict, Value())
 
-    # See gs://google-cloud-aiplatform/schema/predict/instance/image_classification_1.0.0.yaml for the format of the instances.
     instances_list = [instance]
     instances = [json_format.ParseDict(s, Value()) for s in instances_list]
     response = client.predict(
